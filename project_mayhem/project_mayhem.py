@@ -129,4 +129,4 @@ app = rx.App(
     ),
 )
 
-app.add_page(index)
+app.add_page(index, title="Project Mayhem")
