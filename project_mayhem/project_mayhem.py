@@ -1,36 +1,42 @@
-"""Welcome to Reflex! This file outlines the steps to create a basic app."""
-
 import reflex as rx
-
 from rxconfig import config
 
-
-class State(rx.State):
-    """The app state."""
-
-
 def index() -> rx.Component:
-    # Welcome Page (Index)
-    return rx.container(
-        rx.color_mode.button(position="top-right"),
-        rx.vstack(
-            rx.heading("Welcome to Reflex!", size="9"),
-            rx.text(
-                "Get started by editing ",
-                rx.code(f"{config.app_name}/{config.app_name}.py"),
-                size="5",
-            ),
-            rx.link(
-                rx.button("Check out our docs!"),
-                href="https://reflex.dev/docs/getting-started/introduction/",
-                is_external=True,
-            ),
-            spacing="5",
-            justify="center",
-            min_height="85vh",
+    return rx.box(
+        rx.video(
+            src="/project_mayhem_tv.mp4",
+            playing=True,
+            loop=True,
+            controls=False,
+            muted=True,
+            width="100%",
+            height="100%",
+            object_fit="cover",
+            display="block",
         ),
+        position="fixed",
+        inset="0",
+        display="flex",
+        align_items="center",
+        justify_content="center",
+        background_color="black",
+        overflow="hidden",
     )
 
+app = rx.App(
+    style={
+        "html, body, #root": {
+            "height": "100%",
+            "width": "100%",
+            "margin": "0",
+            "padding": "0",
+            "background_color": "black",
+        },
+        "::selection": {"background_color": "#4e8cff"},
+    },
+    theme=rx.theme(
+        breakpoints=["520px", "768px", "1024px", "1280px", "1640px"],
+    ),
+)
 
-app = rx.App()
 app.add_page(index)
