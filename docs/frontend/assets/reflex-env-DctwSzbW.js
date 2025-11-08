@@ -1,0 +1,1 @@
+var e={PING:`http://projectmayhem.github.io:8000/ping`,EVENT:`ws://projectmayhem.github.io:8000/_event`,UPLOAD:`http://projectmayhem.github.io:8000/_upload`,AUTH_CODESPACE:`http://projectmayhem.github.io:8000/auth-codespace`,HEALTH:`http://projectmayhem.github.io:8000/_health`,ALL_ROUTES:`http://projectmayhem.github.io:8000/_all_routes`,TEST_MODE:!1};export{e as t};
